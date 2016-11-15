@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body ng-app ng-init="user.name='word'">
+    <h1>双边绑定</h1>
+    <p><input type="text" placeholder="请输入你的用户名" ng-model="user.name"></p>
+    <p>{{user.name || word}}</p>
+    <script src="bower_components/angular/angular.js"></script>
+    </body>
+    <script>
+function getName() { 
+	var name = "美女的名字"; 
+	function displayName() { console.log(name);  } 
+	return displayName;
+	}
+	var girl = getName(); 
+	girl() //"美女的名字"
+
+  function getname(){
+    var foo1="10";
+    function name1(){
+	console.log(foo1); }
+	return name1;
+    
+  }
+  var la= getname();
+  la();
+  function getOuter(){ 
+  var date = '815'; 
+  function getDate(str){
+   console.log(str + date); 
+   //访问外部的date 
+  } 
+  return getDate('今天是：'); 
+  //"今天是：815"
+ }
+ getOuter();
+/* (function() {  console.log(1);   setTimeout(function(){console.log(2)}, 1000);   setTimeout(function(){console.log(3)}, 0);   console.log(4); })();*/
+ for (var i = 0; i < 5; i++) {  var btn = document.createElement('button');  btn.appendChild(document.createTextNode('Button ' + i));  btn.addEventListener('click', function(){ console.log(i); });  document.body.appendChild(btn); };
+ 	var arr1 = "john".split('');// j o h n 
+ 	var arr2 = arr1.reverse(); //n h o j 
+ 	var arr3 = "jones".split(''); //j o n e s 
+ 	arr2.push(arr3); 
+ 	console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1)); 
+ 	console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
+ 	console.log(1 + "2" + "2"); console.log(1 + +"2" + "2"); console.log(1 + -"1" + "2"); console.log(+"1" + "1" + "2"); console.log( "A" - "B" + "2"); console.log( "A" - "B" + 2);
+ 	for (var i = 0; i < 10; i++) {  setTimeout(function() { console.log(i); }, i * 1000 ); };
+ 		console.log(false == '0') ;
+ 	console.log(false === '0');
+    </script>
+</html>
