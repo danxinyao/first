@@ -1,0 +1,62 @@
+bower init
+bower install angular --save
+bower install angular-route --save  路由
+
+json_encode(arr)   //把数字转化为json对象
+闭包的用途（作用）1、匿名自执行函数2、结果缓存3、封装4、实现类和继承
+
+var  obj = {}; 
+var arr = [];   
+console.log(typeof obj === 'object'); //true
+console.log(typeof arr === 'object'); //true
+console.log(typeof null === 'object'); //true
+console.log(Object.prototype.toString.call(obj)); //[object Object]
+console.log(Object.prototype.toString.call(arr)); //[object Array] 
+console.log(Object.prototype.toString.call(null)); //[object Null] 
+
+
+NaN 是 Not a Number 的缩写，JavaScript 的一种特殊数值，其类型是 Number，可以通过 isNaN(param) 来判断一个值是否是 NaN：
+
+?123456789 console.log(isNaN(NaN)); //true
+ console.log(isNaN(23)); //false console.log(isNaN('ds')); //true 
+console.log(isNaN('32131sdasd')); //true 
+console.log(NaN === NaN); //false 
+console.log(NaN === undefined); //false
+ console.log(undefined === undefined); //false 
+console.log(typeof NaN); //number 
+console.log(Object.prototype.toString.call(NaN)); //[object Number] 
+
+ES6 中，isNaN() 成为了 Number 的静态方法：Number.isNaN().
+
+
+ng-cloak防止刷新页面抖动；
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			[ng-cloak]{display:none;}
+        </style>
+    </head>
+    <body>
+    <table border=1 ng-controller="hellowController" ng-cloak>
+或者 .ng-cloak{display:none;}    class="ng-cloak"
+或者
+<title>ng-cloak 防止抖动</title>
+<!-- <style>
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none!important;}
+ng\:form{display:block;}
+.ng-animate-shim{visibility:hidden;}
+.ng-anchor{position:absolute;}
+</style> -->
+<script src="bower_components/angular/angular.js"></script>
+
+</head>
+<body ng-app ng-cloak>
+<h1>{{"hellow"}}</h1>
+</body>
+</html>
+
+数组有重复是用这个
+<li ng-repeat="name in students track by $index"> {{name}} </li>
+
+
